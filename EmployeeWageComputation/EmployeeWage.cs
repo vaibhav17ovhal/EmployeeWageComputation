@@ -8,7 +8,7 @@ namespace EmployeeWageComputation
 {
     public class EmployeeWage
     {
-        const int IS_PRESENT = 1, WAGE_PER_HR = 20, FULL_DAY_HR = 8, PART_TIME_HR = 4, IS_FULL_TIME = 0, IS_PART_TIME = 1;
+        const int IS_PRESENT = 1, WAGE_PER_HR = 20, FULL_DAY_HR = 8, PART_TIME_HR = 4, IS_FULL_TIME = 0, IS_PART_TIME = 1, WORKING_DAYS = 20;
         public void Attendance()
         {
             Random random = new Random();
@@ -22,19 +22,22 @@ namespace EmployeeWageComputation
         {
             int empHrs = 0;
             Random random = new Random();
+            for (int i = 0; i < WORKING_DAYS; i++)
+            { 
             int check = random.Next(0, 3);
             switch (check)
-            {
+                {
                 case IS_FULL_TIME:
-                    empHrs = FULL_DAY_HR;
+                    empHrs += FULL_DAY_HR;
                     break;
                 case IS_PART_TIME:
-                    empHrs = PART_TIME_HR;
+                    empHrs += PART_TIME_HR;
                     break;
                 default:
-                    empHrs = 0;
+                    empHrs += 0;
                     break;
 
+                }
             }
             int wage = WAGE_PER_HR * FULL_DAY_HR;
             Console.WriteLine(wage);
