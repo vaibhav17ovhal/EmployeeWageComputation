@@ -12,6 +12,10 @@ namespace EmployeeWageComputataion
             Console.WriteLine("=============X=============");
 
             EmployeeDetails.Attendance();
+
+            Console.WriteLine("=============X=============");
+
+            EmployeeDetails.CalculateWage();
         }
     }
 }
