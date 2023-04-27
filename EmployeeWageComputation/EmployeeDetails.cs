@@ -10,21 +10,7 @@ namespace EmployeeWageComputation
     {
         public const int IS_FULL_TIME = 1;
         public const int WAGE_PER_HR = 20;
-        public static void Attendance()
-        {
-            int IS_PRESENT = 1;
-            Random random = new Random();
-            int check = random.Next(2);
 
-            if (check == IS_PRESENT)
-            {
-                Console.WriteLine("Employee is Present");
-            }
-            else
-            {
-                Console.WriteLine("Employee is Absent");
-            }
-        }
         public static void CalculateWage()
         {
             int emp_Hr = 0;
@@ -43,9 +29,7 @@ namespace EmployeeWageComputation
                 emp_Hr = 0;
                 Console.WriteLine("Employee is Absent");
             }
-
             emp_Wage = emp_Hr * WAGE_PER_HR;
-
             Console.WriteLine($"Employee Wage: {emp_Wage}");
         }
     }
