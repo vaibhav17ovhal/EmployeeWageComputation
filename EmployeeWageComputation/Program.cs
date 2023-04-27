@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EmployeeWageComputation;
+using System;
 
 namespace EmployeeWageComputataion
 {
@@ -7,6 +8,10 @@ namespace EmployeeWageComputataion
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Employee Wage Computation.");
+
+            Console.WriteLine("=============X=============");
+
+            EmployeeDetails.Attendance();
         }
     }
 }
