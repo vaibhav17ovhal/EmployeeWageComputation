@@ -24,6 +24,10 @@ namespace EmployeeWageComputataion
             Console.WriteLine("=============X=============");
 
             EmployeeDetails.CalculatingPartTimeWageWithSwitch();
+
+            Console.WriteLine("=============X=============");
+
+            EmployeeDetails.CalculateWagesForMonth();
         }
     }
 }
