@@ -28,6 +28,10 @@ namespace EmployeeWageComputataion
             Console.WriteLine("=============X=============");
 
             EmployeeDetails.CalculateWagesForMonth();
+
+            Console.WriteLine("=============X=============");
+
+            EmployeeDetails.CalculateWageTillCondition();
         }
     }
 }
