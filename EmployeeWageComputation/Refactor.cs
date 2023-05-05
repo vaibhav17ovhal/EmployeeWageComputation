@@ -19,6 +19,7 @@ namespace EmployeeWageComputation
         public static int MONTHLY_WAGE = 0;
         public static int total_Working_Hrs = 0;
         public static int total_Working_Days = 0;
+        
         public static int GetWorkingHour(int check)
         {
             int emp_Hr = 0;
