@@ -7,6 +7,7 @@ namespace EmployeeWageComputataion
     {
         static void Main(string[] args)
         {
+            /*
             Console.WriteLine("Welcome to Employee Wage Computation.");
 
             Console.WriteLine("=============X=============");
@@ -32,6 +33,10 @@ namespace EmployeeWageComputataion
             Console.WriteLine("=============X=============");
 
             EmployeeDetails.CalculateWageTillCondition();
+            */
+
+            Refactor.ComputeEmployeeWage();
+
         }
     }
 }
