@@ -6,30 +6,31 @@ using System.Threading.Tasks;
 
 namespace EmployeeWageComputation
 {
-    public class EmpWageBuilderArray
+    public class EmpWageBuilder: IComputeEmpWage
     {
         public const int IS_FULL_TIME = 1;
         public const int IS_PART_TIME = 2;
 
-        private int numOfCompany = 0;
-        private CompanyEmpWage[] companyEmpWageArray;
+        private LinkedList<CompanyEmpWage> employees;
+        private Dictionary<string, CompanyEmpWage> employeesMap;
 
-        public EmpWageBuilderArray()
+        public EmpWageBuilder()
         {
-            this.companyEmpWageArray = new CompanyEmpWage[5];
+            this.employees = new LinkedList<CompanyEmpWage>();
+            this.employeesMap = new Dictionary<string, CompanyEmpWage>();
         }
         public void addCompanyEmpWage(string company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth)
         {
-            companyEmpWageArray[this.numOfCompany] = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
-            numOfCompany++;
+            CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
+            this.employees.AddLast(companyEmpWage);
+            this.employeesMap.Add(company, companyEmpWage);
         }
         public void computeEmpWage()
         {
-            for(int i = 0; i < numOfCompany; i++)
+            foreach(CompanyEmpWage companyEmpWage in this.employees)
             {
-                int val = this.computeEmpWage(this.companyEmpWageArray[i]);
-                companyEmpWageArray[i].setTotalEmpWage(val);
-                Console.WriteLine(this.companyEmpWageArray[i].toString());
+                companyEmpWage.setTotalEmpWage(this.computeEmpWage(companyEmpWage));
+                Console.WriteLine(companyEmpWage.toString);
             }
         }
         private int computeEmpWage(CompanyEmpWage companyEmpWage)
@@ -58,6 +59,10 @@ namespace EmployeeWageComputation
                 Console.WriteLine($"Total emp hrs: {totalEmpHrs}");
             }
             return totalEmpHrs * companyEmpWage.empRatePerHour;
+        }
+        public int getTotalWage(string company)
+        {
+            return this.employeesMap[company].totalEmpWage;
         }
 
     }

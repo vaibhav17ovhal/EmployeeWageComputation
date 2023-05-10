@@ -53,10 +53,17 @@ namespace EmployeeWageComputataion
             //Console.WriteLine(tata.toString());
 
             //UC10
-            EmpWageBuilderArray emp = new EmpWageBuilderArray();
+            //EmpWageBuilderArray emp = new EmpWageBuilderArray();
+            //emp.addCompanyEmpWage("Audi", 20, 5, 160);
+            //emp.addCompanyEmpWage("Mercedes", 50, 5, 160);
+            //emp.computeEmpWage();
+
+            //UC11
+            EmpWageBuilder emp = new EmpWageBuilder();
             emp.addCompanyEmpWage("Audi", 20, 5, 160);
             emp.addCompanyEmpWage("Mercedes", 50, 5, 160);
             emp.computeEmpWage();
+            Console.WriteLine($"Total wage for Audi company: {emp.getTotalWage("Audi")}");
         }
     }
 }
