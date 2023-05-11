@@ -64,6 +64,5 @@ namespace EmployeeWageComputation
         {
             return this.employeesMap[company].totalEmpWage;
         }
-
     }
 }
